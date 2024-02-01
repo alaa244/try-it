@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can We Start Again?</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #f9a5d7, #c7cce5); /* Gradient background */
+        }
+
+        #message-container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #f442a7; /* Pink color */
+        }
+
+        p {
+            color:black; /* Lighter pink color */
+            font-size: 22px;
+            margin-bottom: 22px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        label {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 16px;
+            color:black; /* Lighter pink color */
+            position: relative;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[type="radio"] + label {
+            padding: 10px 20px;
+            border: 2px solid #f442a7; /* Pink color */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        input[type="radio"]:checked + label {
+            background-color: #f442a7; /* Pink color */
+            color: #fff;
+        }
+
+        img {
+            max-width: 90%;
+            height: 250px;
+            border-radius: 10px;
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+
+        #cute-message {
+            display: none;
+            color: #f442a7;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="message-container">
+    <h1>Can We Start Again?</h1>
+    <img src="lol.gif" alt="Background Photo">
+    <p>Hi babe,</p>
+    <p>I can't get u out of my mind bcz feel the warmth of the moments we shared. I miss you more than words can express, and I want to heal the wounds between us. Can we talk and find a way back to each other?</p>
+    
+    <form method="post" id="choiceForm">
+        <input type="radio" id="yes" name="choice" value="yes" onchange="showCuteMessage()">
+        <label for="yes">Yes</label>
+
+        <input type="radio" id="no" name="choice" value="no" onmouseover="moveRandomly()">
+        <label for="no" onmouseover="moveRandomly()">No</label>
+    </form>
+
+    <div id="cute-message">Yay! 🌈 Let's make new memories together! 
+        send me in DM I waiting u ❤️
+    </div>
+</div>
+
+<script>
+    function moveRandomly() {
+        var noLabel = document.querySelector('label[for="no"]');
+        noLabel.style.position = 'absolute';
+        noLabel.style.top = `${Math.random() * 70}vh`; /* Random top position */
+        noLabel.style.left = `${Math.random() * 70}vw`; /* Random left position */
+    }
+
+    function showCuteMessage() {
+        var cuteMessage = document.getElementById('cute-message');
+        cuteMessage.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
